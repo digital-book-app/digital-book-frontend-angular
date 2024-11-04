@@ -59,8 +59,7 @@ jobs:
           ECR_REPOSITORY: digital-book/digital-book-angular-develop
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          aws ecr-public get-login-password --region us-west-2 |
-          docker login --username AWS --password-stdin public.ecr.aws/s9g1j4m4
+          aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/s9g1j4m4
           docker build -t $ECR_REPOSITORY:IMAGE_TAG .
           docker tag $ECR_REPOSITORY:IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
