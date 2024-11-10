@@ -1,0 +1,14 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "public.ecr.aws/s9g1j4m4/digital-book/digital-book-angular-develop:latest-develop",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "80"
+    }
+  ],
+  "Memory": "512",
+  "Cpu": "256"
+}
